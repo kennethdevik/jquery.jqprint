@@ -2,6 +2,7 @@
 // Eros Fratini - eros@recoding.it
 // jqprint 0.3
 //
+// - 10/05/2012 - Added support for media=all tag, Kenneth Devik
 // - 19/06/2009 - some new implementations, added Opera support
 // - 11/05/2009 - first sketch
 //
@@ -38,9 +39,9 @@
         
         if (opt.importCSS)
         {
-            if ($("link[media=print]").length > 0) 
+            if ($("link[media=print], link[media=all]").length > 0) 
             {
-                $("link[media=print]").each( function() {
+                $("link[media=print], link[media=all]").each( function() {
                     doc.write("<link type='text/css' rel='stylesheet' href='" + $(this).attr("href") + "' media='print' />");
                 });
             }
